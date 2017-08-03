@@ -64,9 +64,9 @@ class AllProjectHighlightingTest extends ExternalSystemImportingTestCase with Sb
 
   def doRunTest(): Unit = {
     val projectDir: File = new File(getRootDir, getTestName(false))
-    //this test is not intended to ran locally
+    // this test is not intended to run locally
     if (!projectDir.exists()) {
-      println("Project is not found. Test is skipped.")
+      println(s"Test project data not found at ${projectDir.getAbsolutePath}. Test skipped.")
       return
     }
     importProject()
