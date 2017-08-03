@@ -203,6 +203,8 @@ addCommandAlias("runFastTests", s"testOnly -- --exclude-categories=$slowTestsCat
                                             s"--exclude-categories=$perfOptCategory " +
                                             s"--exclude-categories=$highlightingCategory ")
 
+addCommandAlias("enableTestDebugging","""set javaOptions in Test += "-agentlib:jdwp=transport=dt_socket,server=y,address=5005,suspend=y" """)
+
 lazy val setUpTestEnvironment = taskKey[Unit]("Set up proper environment for running tests")
 
 setUpTestEnvironment in ThisBuild := {
